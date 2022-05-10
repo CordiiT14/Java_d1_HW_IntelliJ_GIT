@@ -16,4 +16,16 @@ public class PrinterTest {
         assertEquals(100, epson.getPaperSheets());
     }
 
+    @Test
+    public void canPrint(){
+        epson.print(5, 2);
+        assertEquals(90, epson.getPaperSheets());
+    }
+
+    @Test
+    public void insufficientPaperToPrint(){
+        epson.print(51, 2);
+        assertEquals(100, epson.getPaperSheets());
+    }
+
 }
